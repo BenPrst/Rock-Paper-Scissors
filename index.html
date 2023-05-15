@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./assets/style/css/style.css" />
+    <script src="./assets/script.js" defer></script>
+
+    <title>Rock, Paper, Scissors</title>
+  </head>
+  <body>
+    <header>
+      <!-- SCOREBOARD -->
+      <article class="scoreboard">
+        <section class="title">
+          <img class="logo" src="./assets/images/logo.svg" alt="" />
+        </section>
+        <section class="score">
+          <span class="score-title">SCORE</span
+          ><span class="score-number" id="score">0</span>
+        </section>
+      </article>
+    </header>
+    <main>
+      <!-- CHOICE DIV -->
+      <article class="rock-paper-scissors" id="rock-paper-scissors">
+        <section class="top-rps">
+          <div class="icon paper" id="paper"></div>
+          <div class="icon scissors" id="scissors"></div>
+        </section>
+        <div class="icon rock" id="rock"></div>
+      </article>
+      <!-- VS DIV -->
+      <article class="result-div" id="result-div">
+        <!-- PLAYER PICK -->
+        <section class="player vs">
+          <h2>YOU PICKED</h2>
+          <div class="player-pick pick" id="player-pick"></div>
+        </section>
+        <section class="result-message-div" id="result-message-div">
+          <span class="result-message" id="resultMessage"></span>
+          <button class="play-again" id="playAgain">PLAY AGAIN</button>
+        </section>
+        <!-- COMPUTER PICK -->
+        <section class="computer vs">
+          <h2>THE HOUSE PICKED</h2>
+          <div class="computer-pick pick" id="computer-pick"></div>
+        </section>
+      </article>
+    </main>
+    <footer class="attribution">
+      <!--ATTRIBUTION  -->
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">BenPrst</a>.
+    </footer>
+  </body>
+</html>

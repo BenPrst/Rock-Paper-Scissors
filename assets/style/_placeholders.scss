@@ -1,0 +1,38 @@
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+%icons {
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  border: solid 1.25rem;
+  margin: 1.875rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 1.875rem;
+  background-color: white;
+  border-radius: 50%;
+}
+
+%icon-after {
+  content: "";
+  width: 18.75rem;
+  height: 0.9375rem;
+  z-index: -1;
+  background-color: rgba(5, 0, 41, 0.816);
+  position: absolute;
+  display: block;
+}
+
+%icon-pick {
+  background-position: center;
+  background-size: 5rem;
+  background-repeat: no-repeat;
+  background-color: white;
+  border: 1.5625rem solid;
+  border-radius: 50%;
+  width: 9.375rem;
+  height: 9.375rem;
+}

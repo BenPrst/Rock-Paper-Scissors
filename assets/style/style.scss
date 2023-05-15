@@ -1,0 +1,238 @@
+@import "./_variables";
+@import "./_placeholders";
+@import "./placeholders";
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: $blue-gradient;
+  min-height: 100vh;
+  width: 100vw;
+  @extend %flex-center;
+  flex-direction: column;
+  font-family: "Barlow", sans-serif;
+  color: white;
+}
+
+header {
+  width: 100%;
+  @extend %flex-center;
+}
+
+main {
+  width: 100%;
+  @extend %flex-center;
+}
+
+footer {
+  width: 100%;
+  @extend %flex-center;
+}
+
+.scoreboard {
+  width: 65%;
+  max-width: 43.75rem;
+  height: 6.25rem;
+  border: solid 2px rgba(255, 255, 255, 0.311);
+  border-radius: 0.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.625rem 0 0.93rem;
+  position: fixed;
+  top: 2.5rem;
+  .logo {
+    width: 70%;
+    margin-top: 0.5rem;
+  }
+  .score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    height: 3.75rem;
+    width: 5rem;
+    border-radius: 5px;
+    padding: 0.625rem;
+    .score-title {
+      color: rgb(0, 0, 199);
+      font-size: 0.625rem;
+      letter-spacing: 2px;
+      font-weight: 800;
+    }
+    .score-number {
+      color: rgb(90, 90, 90);
+      font-size: 2.5rem;
+      font-weight: 800;
+      text-align: center;
+    }
+  }
+}
+
+.rock-paper-scissors {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.top-rps {
+  display: flex;
+  justify-content: space-between;
+  width: 28.125rem;
+}
+
+.paper {
+  @extend %icons;
+  border-color: rgb(0, 110, 255);
+  background-image: url("../../images/icon-paper.svg");
+}
+.scissors {
+  @extend %icons;
+  border-color: rgb(255, 221, 0);
+  background-image: url("../../images/icon-scissors.svg");
+}
+.rock {
+  @extend %icons;
+  border-color: rgb(255, 47, 0);
+  background-image: url("../../images/icon-rock.svg");
+}
+
+.rock::after {
+  @extend %icon-after;
+  rotate: 55deg;
+  left: 0.125rem;
+  top: 12.5rem;
+}
+
+.paper::after {
+  @extend %icon-after;
+  rotate: -55deg;
+  right: 0.125rem;
+  top: 12.5rem;
+}
+
+.scissors::after {
+  @extend %icon-after;
+  top: 5.3125rem;
+  left: 3.75rem;
+}
+
+.play-again {
+  all: initial;
+  border-radius: 0.625rem;
+  height: 1.875rem;
+  background-color: white;
+  width: 7.5rem;
+  text-align: center;
+  font-family: "Barlow", sans-serif;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.0938rem;
+  cursor: pointer;
+}
+
+.vs {
+  @extend %flex-center;
+  flex-direction: column;
+}
+
+.rockPick {
+  @extend %icon-pick;
+  border-color: rgb(255, 47, 0);
+  background-image: url(../../images/icon-rock.svg);
+}
+.paperPick {
+  @extend %icon-pick;
+  border-color: rgb(0, 110, 255);
+  background-image: url(../../images/icon-paper.svg);
+}
+.scissorsPick {
+  @extend %icon-pick;
+  border-color: rgb(255, 221, 0);
+  background-image: url(../../images/icon-scissors.svg);
+}
+
+.attribution {
+  bottom: 0;
+  position: absolute;
+}
+
+.result-div {
+  display: none;
+  width: 40%;
+  justify-content: space-between;
+  align-items: center;
+  animation: ouverture 2s forwards;
+  animation-delay: 2.5s;
+  h2 {
+    font-size: 100%;
+    text-align: center;
+  }
+}
+
+.result-message-div {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  line-height: 3.125rem;
+  margin: 0rem 1.875rem;
+  animation: opacity 1s forwards;
+}
+
+.result-message {
+  font-size: 1.875rem;
+  font-weight: 900;
+  font-stretch: condensed;
+  letter-spacing: 0.125rem;
+  text-align: center;
+}
+
+.computer-pick {
+  opacity: 0%;
+  animation: opacity 1s forwards;
+  animation-delay: 1s;
+}
+
+.ripple {
+  animation: ripple 1.5s infinite;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes ouverture {
+  0% {
+    width: 40%;
+  }
+  100% {
+    width: 65%;
+  }
+}
+
+//RIPPLE EFFECT
+@keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 0 #fff4, 0 0 0 0 #fff4;
+  }
+
+  80% {
+    box-shadow: 0 0 0 20px #fff0, 0 0 0 40px #fff0;
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 #fff0, 0 0 0 0 #fff0;
+  }
+}
