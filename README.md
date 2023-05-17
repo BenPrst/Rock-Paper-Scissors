@@ -3,7 +3,7 @@
 
 ## Screenshots
 
-![App Screenshot](./design/desktop-design.jpg)
+![App Screenshot](./assets/design/desktop-design.jpg)
 
 ## Authors
 
